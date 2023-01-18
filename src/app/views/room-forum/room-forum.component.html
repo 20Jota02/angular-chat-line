@@ -1,0 +1,107 @@
+
+  <div>
+    <!-- <nav class="navbar navbar-light bg-primary">
+      <a class="navbar-brand mx-auto" href="/">Forum</a>
+    </nav> -->
+    <div class="container-fluid h-100 ">
+      <div class="row justify-content-center h-100">
+        <div class="col-md-8 col-xl-6  ">
+        <div class="card">
+          <div class=" header-fond color ">
+            <div class="color1 ">
+
+              <div class="user_info ">
+                <span> {{name_temaForo}} </span>
+              </div>
+              <h3 class="num1">{{socketservice.bodychat.length}} Mensages</h3>
+
+            </div>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+          <div  class="card-body msg_card_body" *ngFor="let data of socketservice.bodychat">
+            <div  [className]="data.user_id === idDelUsuario ? 'd-flex justify-content-start mb-4 chatIzaquierda' : 'd-flex justify-content-start mb-4 '">
+             <div class="img_cont_msg">
+             <img class="rounded-circle user_img_msg" [src]="data.img">
+             <p class="username">{{data.username}}</p>
+             </div>
+             <div id="chat" [className]="data.user_id === idDelUsuario ? 'msg_cotainer  colorizquierda' : 'msg_cotainer '">
+                 <p>{{data.message}}</p>
+                 <div class="row-reverse">
+                   <p class="msg_time">{{data.hora_envio}}</p>
+                 </div>
+             </div>
+         </div>
+         </div>
+        </div>
+          <form id="message-form" #messageForm class="card-footer">
+            <div class="input-group">
+              <input [(ngModel)]="message" [ngModelOptions]="{standalone : true}"type="text" id="message" class="form-control inputmessages" >
+              
+              <div class="">
+                <!-- <button (click)="sendmessage($event)" class="btn btn-danger">Enviar</button> -->
+                
+                <button  type="submit" (click)="sendmessage($event)" class="custom-btn btn-2">
+                  <img src="../../../assets/img/icons8-lleno-enviado-64.png" class="img_enviar">
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+
+  
+	<!--Coded With Love By Mutiullah Samim-->
+	<!-- <body>
+		<div class="container-fluid h-100">
+			<div class="row justify-content-center h-100">
+
+				<div class="col-md-8 col-xl-6 chat">
+
+					<div class="card">
+
+						<div class="card-header msg_head">
+							<div class="d-flex bd-highlight">
+
+								<div class="user_info">
+									<span> {{name_temaForo}} </span>
+									<p>1767 Messages</p>
+								</div>
+
+							</div>
+
+						</div>
+						<div class="card-body msg_card_body">
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+
+									<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+                  <img class="image-circle m-4" [src]="data.img"><b>{{data.username}}</b>
+									<span class="msg_time">8:40 AM, Today</span>
+								</div>
+							</div>
+
+
+
+
+
+
+
+						</div>
+            <form id="message-form" #messageForm class="card-footer">
+              <div class="input-group">
+                <input [(ngModel)]="message" [ngModelOptions]="{standalone : true}"type="text" id="message" class="form-control" />
+                <div class="input-group-append">
+                  <input type="submit" (click)="sendmessage($event)" class="btn btn-warning" />
+                </div>
+              </div>
+            </form>
+					</div>
+				</div>
+			</div>
+		</div>
+ -->

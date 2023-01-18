@@ -1,0 +1,67 @@
+ <!-- <div class="row d-flex justify-content-center mt-3">
+  <div class="card margin col-md-6">
+    <div class="card-body">
+      <form [formGroup]="FormForo" (submit)="PostForm(FormForo.value)">
+        <p hidden>{{ FormForo.status | json }}</p>
+        <div class="row">
+          <div class="col-md-6 ">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Tema Foro " type="text" formControlName="forum">
+            </mat-form-field>
+            <div class="text-danger">
+              <label *ngIf="FormForo.get('forum').hasError('required') && FormForo.get('forum')?.touched"><strong
+                  class="text-danger ">Campo requerido </strong></label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="descricion " type="text"formControlName="description">
+            </mat-form-field>
+            <div class="text-danger">
+              <label
+                *ngIf="FormForo.get('description').hasError('required') && FormForo.get('description')?.touched"><strong
+                  class="text-danger">Campo requerido </strong></label>
+            </div>
+          </div>
+        </div>
+        <button mat-raised-button type="submit" class="btn btn-dark">iniciar</button>
+        <div class="clearfix"></div>
+      </form>
+    </div>
+  </div>
+  
+  </div> -->
+  <!-- *********************************** -->
+
+  <div class="login-box">
+    <form [formGroup]="FormForo" (submit)="PostForm(FormForo.value)">
+        <p hidden>{{ FormForo.status | json }}</p>
+
+        <div class="text-danger">
+          <label *ngIf="FormForo.get('forum').hasError('required') && FormForo.get('forum')?.touched"><strong
+              class="text-danger ">Campo requerido </strong></label>
+        </div>
+      <div class="user-box">
+        
+        <input  type="text" formControlName="forum" name="" required="">
+        
+        <label>Tema foro</label>
+        
+      </div>
+      
+      <div class="text-danger">
+        <label
+          *ngIf="FormForo.get('description').hasError('required') && FormForo.get('description')?.touched"><strong
+            class="text-danger">Campo requerido </strong></label>
+      </div>
+      <div class="user-box">
+        <input  type="text"formControlName="description" name="" required="">
+        <label>descricion</label>   
+      </div>
+      
+      <button mat-raised-button type="submit" class="btn btn-dark">Registrar</button>
+      <div class="clearfix"></div>
+    </form>
+  </div>

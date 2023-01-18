@@ -1,0 +1,93 @@
+<div class="row d-flex justify-content-center mt-3">
+<div class="card margin col-md-6">
+  <div class="card-header card-header-sena-azul">
+    <h4 class="card-title">Crear un nuevo usuario </h4>
+    <p class="card-category">En este apartado podrás crear un nuevo usuario</p>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="UserForm" (submit)="PostForm(UserForm.value)">
+      <p hidden>{{ UserForm.status | json }}</p>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="nombre de usuario" type="text" formControlName="name_user">
+          </mat-form-field>
+          <div class="text-danger">
+            <label *ngIf="UserForm.get('name_user').hasError('required') && UserForm.get('name_user')?.touched"><strong
+                class="text-danger">Campo requerido </strong></label>
+            <span *ngIf="UserForm.get('name_user').errors?.maxlength"><strong>maximo 25 caracteres</strong></span>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="nombre" type="text" formControlName="name">
+          </mat-form-field>
+          <div class="text-danger">
+            <label
+              *ngIf="UserForm.get('name').hasError('required') && UserForm.get('name')?.touched"><strong
+                class="text-danger">Campo requerido </strong></label>
+            <span *ngIf="UserForm.get('name').errors?.maxlength"><strong>maximo 25 caracteres</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="correo electronico" type="email" formControlName="email">
+          </mat-form-field>
+          <div class="text-danger">
+            <label
+              *ngIf="UserForm.get('email').errors?.email && UserForm.get('email')?.touched"><strong
+                class="text-danger">Campo Tipo Email </strong></label>
+            <label
+              *ngIf="UserForm.get('email').hasError('required') && UserForm.get('email')?.touched"><strong
+                class="text-danger">Campo requerido </strong></label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="apellido" type="text" formControlName="surname">
+          </mat-form-field>
+          <div class="text-danger">
+            <label
+              *ngIf="UserForm.get('surname').hasError('required') && UserForm.get('surname')?.touched"><strong
+                class="text-danger">Campo requerido </strong></label>
+            <span *ngIf="UserForm.get('surname').errors?.maxlength"><strong>maximo 25
+                caracteres</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Foto " type="text" formControlName="photo">
+          </mat-form-field>
+          <div class="text-danger">
+            <label
+              *ngIf="UserForm.get('photo').hasError('required') && UserForm.get('photo')?.touched"><strong
+                class="text-danger">Campo requerido </strong></label>
+            <span *ngIf="UserForm.get('photo').errors?.max"><strong>maximo 10 digitos</strong></span>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Contraseña" type="password" formControlName="password">
+          </mat-form-field>
+          <div class="text-danger">
+            <label
+              *ngIf="UserForm.get('password').hasError('required') && UserForm.get('password')?.touched"><strong
+                class="text-danger">Campo requerido </strong></label>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button type="submit" class="btn btn-dark">Guardar</button>
+      <div class="clearfix"></div>
+    </form>
+  </div>
+</div>
+
+</div>
